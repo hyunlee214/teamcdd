@@ -14,8 +14,9 @@ class UserStorage {
       return userInfo;
   }
 
-  static getUsers(...fields) {
-    // const users = this.#users;
+  static #getUsers(data, isAll, fields) {
+    const users = JSON.parse(data);
+    if (isAll) return users;
     const newUsers = fields.reduce((newUsers, field) => {
       if (users.hasOwnProperty(field)) {
         newUsers[field] = users[field];
@@ -24,6 +25,15 @@ class UserStorage {
     }, {});
     console.log(newUsers);
     return newUsers;
+
+  }
+
+  static getUsers(isAll, ...fields) {
+    return fs.readFile('./src/databases/users.json')
+    .then((data) => {        // 해당로직이 성공했을 때 실행
+       return this.#getUsers(data, isAll, fields);
+   })
+    .catch(console.error);      // 해당로직이 실패했을 때 실행
   }
 
   static getUserInfo(id) { 
@@ -35,12 +45,16 @@ class UserStorage {
   }
 
 
-  static save(userInfo) {
-    // const users = this.#users;
-    users.id.push(userInfo.id);
-    users.name.push(userInfo.name);
-    users.psword.push(userInfo.psword);
-    return {success: true};
+  static async save(userInfo) {
+    const users = await this.getUsers(true);
+    if (users.id.includes(userInfo.id)) {
+      throw ('이미 있는 아이디임!!!');
+    }
+      users.id.push(userInfo.id);
+      users.name.push(userInfo.name);
+      users.psword.push(userInfo.psword);
+    fs.writeFile('./src/databases/users.json', JSON.stringify(users));
+    return {success : true};
   }
 }
 
