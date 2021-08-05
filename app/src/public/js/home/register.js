@@ -9,11 +9,16 @@ const id = document.querySelector('#id'),
   registerBtn.addEventListener('click',register);
 
   function register() {
+    if (!id.value)
+    return alert('아이디는 입력하셔야죠!!!');
+    if (psword.value !== confirmPsword.value) {
+    return alert('비밀번호가 서로 달라요!!!');
+  }
+
     const req = {
       id : id.value,
       name : name.value,
       psword: psword.value,
-      confirmPsword: confirmPsword.value,
     };
 
     fetch('/register', {
