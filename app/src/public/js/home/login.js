@@ -13,7 +13,6 @@ const id = document.querySelector('#id'),
     };
 
     fetch('/login', {
-      method: "POST",
       headers: {
         "Content-Type" : "application/json",
       },
@@ -21,6 +20,13 @@ const id = document.querySelector('#id'),
     })
       .then((res) => res.json())
       .then((res) => {
-
+          if (res.success) {
+            location.href = "/";
+          } else {
+            alert(res.msg);
+          }
+      })
+      .catch((err) => {
+        console.error('로그인중에러발생!!!');
       });
-  }
+    }
