@@ -13,6 +13,7 @@ const id = document.querySelector('#id'),
     };
 
     fetch('/login', {
+      method: "POST",
       headers: {
         "Content-Type" : "application/json",
       },
