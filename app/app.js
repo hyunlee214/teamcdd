@@ -9,8 +9,8 @@ const app = express();
 dotenv.config();
 
 const accessLogStream = require('./src/config/log');
-const logger = require('./src/config/logger');
-logger.error('testing');
+// const logger = require('./src/config/logger');
+// logger.error('testing');
 
 
 const home = require('./src/routes/home');
