@@ -18,7 +18,12 @@ const printLogFormat = {
   ),
   console: combine(
     colorize(),
-    simple()
+    simple(),
+    // format.printf(info => `${info.level}: ${info.message}`)
+    // label(),
+    // json(),
+    // combine()
+
   ),
 };
 

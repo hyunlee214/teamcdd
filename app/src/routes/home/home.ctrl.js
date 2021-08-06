@@ -28,7 +28,7 @@ const process = {
       );
     else
       logger.info (
-      `POST /login 200 Response: "success: ${response.success}, msg: ${response.msg}"`
+      `POST /login 200 Response: "로그인한 사람: ${req.body.id}, success: ${response.success}, msg: ${response.msg}"`
     );
     return res.json(response);
   },
