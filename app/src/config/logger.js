@@ -8,7 +8,7 @@ const printFormat = printf(({ timestamp, label, level, message }) => {
 const printLogFormat = {
   file: combine(
     label({
-      label: "테스트 레이블",
+      label: "딩독 출석부",
     }),
     // colorize(),    // 파일에 로그추가할때는 없는게나음
     timestamp({
@@ -43,5 +43,9 @@ const logger = createLogger({
 if (process.env.NODE_ENV !== "production") {
   logger.add(options.console);
 }
+
+logger.stream = {
+  write: (message) => logger.info(message),
+};
 
 module.exports = logger;
