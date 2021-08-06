@@ -29,6 +29,7 @@ const id = document.querySelector('#id'),
           if (res.success) {
             location.href = "/";
           } else {
+            if (res.err) return alert(res.err);
             alert(res.msg);
           }
       })

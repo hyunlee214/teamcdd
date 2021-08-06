@@ -20,7 +20,7 @@ class User {
   }
     return {success : false, msg : "아이디부터만드세요!!!"};
   } catch(err) {
-    return {success: false, msg:err };
+    return {success: false, msg : err };
   }
 }
 
@@ -30,7 +30,7 @@ class User {
       const response = await UserStorage.save(client);
       return response;
     } catch(err) {
-       return {success : false, msg: err};
+       return {success : false, err};
     }
   }  
 }
