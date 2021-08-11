@@ -13,6 +13,10 @@ const app = express();
 // logger.error('testing');
 
 const home = require('./src/routes/home');
+// sequelize
+const { sequelize } = require('./models');
+
+sequelize.sync()
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
@@ -20,6 +24,17 @@ app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/src/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
+// sequelize연결 (보완예정)
+
+// sequelize.sync({ force: false })
+// .then(() => {
+//   console.log('db연결 테스트');
+// })
+// .catch((err) => {
+//   console.error(err);
+// });
+
 
 
 app.use('/', home);
