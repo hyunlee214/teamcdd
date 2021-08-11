@@ -13,11 +13,10 @@ const app = express();
 // logger.error('testing');
 
 const home = require('./src/routes/home');
-
 // sequelize
 const { sequelize } = require('./models');
 
-// sequelize.sync()
+sequelize.sync()
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
