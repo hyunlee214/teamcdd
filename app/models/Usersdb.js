@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+
   const Userdb = sequelize.define('Userdb', {
     id : {
       type: DataTypes.STRING
@@ -22,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     paranoid: true,
   });
+  
   return Userdb;
 }
   
