@@ -3,8 +3,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+// sequelize
+const { sequelize }  = require('./models');
+
+
 const dotenv = require('dotenv');
 dotenv.config();
+
+sequelize.sync()
 
 const app = express();
 
@@ -13,10 +19,7 @@ const app = express();
 // logger.error('testing');
 
 const home = require('./src/routes/home');
-// sequelize
-const { sequelize } = require('./models');
 
-sequelize.sync()
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');

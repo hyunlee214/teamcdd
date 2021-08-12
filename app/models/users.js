@@ -1,21 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
 
-  const Userdb = sequelize.define('Userdb', {
-    id : {
-      type: DataTypes.STRING
-    },
+  const Userdb = sequelize.define('users', {
+    // id : {
+    //   type: DataTypes.STRING(30),
+    // },
     name : {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(30),
       allowNull: false,
-      unique: true
     },
     psword : {
-      type: DataTypes.DOUBLE,
+      type: DataTypes.STRING(30),
       allowNull: false
     },
-    in_date : {
-      type: DataTypes.DATE
-    },
+    // in_date : {
+    //   type: DataTypes.DATE
+    // },
   }, {
     charset: 'utf8',
     collate: "utf8_general_ci",
@@ -24,6 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     paranoid: true,
   });
   
-  return Userdb;
+  return ;
 }
   
