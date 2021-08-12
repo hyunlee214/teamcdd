@@ -10,7 +10,15 @@ const { sequelize }  = require('./models');
 const dotenv = require('dotenv');
 dotenv.config();
 
-sequelize.sync()
+//sequelize 실행
+sequelize.sync({ force: false })
+.then(() => {
+  console.log('database연결테스트');
+})
+.catch((err) => {
+  console.error(err);
+})
+
 
 const app = express();
 
