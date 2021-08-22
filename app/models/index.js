@@ -5,7 +5,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';                              
-const config = require(path.join(__dirname, '../config/config.js'))[env];                        // json파일의 sequelize설정들을 config로 불러옴.
+const config = require(path.join(__dirname, '../config/config.json'))[env];                        // json파일의 sequelize설정들을 config로 불러옴.
 const db = {};                                                                            // db라는 객체로 만들어 모듈로 사용. (db안에 sequelize패키지/인스턴스 넣어서 사용 - 코드 밑줄)
 
 let sequelize;                                                                                // sequelize패키지를 설정들을 추가해 인스턴스화 함.

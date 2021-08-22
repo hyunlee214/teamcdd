@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     paranoid: true
   })
-  users.associate = (models) => {
-      users.belongsTo(models.LogType, { foreginKey: 'usersId' })
-    };
+  // users.associate = (models) => {
+  //     // users.belongsTo(models.LogType, { foreginKey: 'usersId' })
+  //   };
     return users
   }
