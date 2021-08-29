@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 // sequelize
 const { sequelize }  = require('./models');

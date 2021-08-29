@@ -2,6 +2,7 @@
 
 const app = require('../app');
 const logger = require("../src/config/logger");
+const http = require('http');
 
 const PORT = process.env.PORT || 7777;
 
