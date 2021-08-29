@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataTypes) => {
 
   const users = sequelize.define('users', {
-    // id : {
-    //   type: DataTypes.STRING(30),
-    // //   allowNull: false
-    // },
+    id : {
+      type: DataTypes.STRING(30),
+      allowNull: false
+    },
     name : {
       type: DataTypes.STRING(30),
       allowNull: false
@@ -23,5 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     paranoid: true
   })
-    return users;
+  // users.associate = (models) => {
+  //     // users.belongsTo(models.LogType, { foreginKey: 'usersId' })
+  //   };
+    return users
   }
