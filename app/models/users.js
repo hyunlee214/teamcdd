@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataTypes) => {
 
   const users = sequelize.define('users', {
-    id : {
-      type: DataTypes.STRING(30),
-      allowNull: false
-    },
+    // id : {
+    //   type: DataTypes.STRING(30),
+    // //   allowNull: false
+    // },
     name : {
       type: DataTypes.STRING(30),
       allowNull: false
