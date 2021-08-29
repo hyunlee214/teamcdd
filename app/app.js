@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const models = require('./models/index.js');
+
 
 // sequelize
 const { sequelize }  = require('./models');
@@ -12,14 +14,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //sequelize 실행
-sequelize.sync({ force: false })
-.then(() => {
-  console.log('database연결테스트');
+models.sequelize.sync().then(() => {
+  console.log('db연결성공');
+}).catch(err => {
+  console.log('db연결실패');
+  console.log(err);
 })
-.catch((err) => {
-  console.error(err);
-})
-
 
 const app = express();
 
