@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   const users = sequelize.define('users', {
     // id : {
     //   type: DataTypes.STRING(30),
-    // //   allowNull: false
+    //   allowNull: false
     // },
     name : {
       type: DataTypes.STRING(30),
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     charset: 'utf8',
     collate: "utf8_general_ci",
-    tableName: "cdd_sequelize",
+    tableName: "cddtable",
     timestamps: true,
     paranoid: true
   })
