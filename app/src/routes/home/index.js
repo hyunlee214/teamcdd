@@ -1,6 +1,8 @@
 "use strict";
 
 const express = require("express");
+const models = require('../home');
+const sequelize = require('sequelize');
 const router = express.Router();
 
 const ctrl = require("./home.ctrl");
