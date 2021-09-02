@@ -1,11 +1,11 @@
 {
-
   "development": {
     "username": "root",
     "password": "1234",
-    "database": "teamcdd",
+    "database": "cddteam",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": "false"
   },
   "test": {
     "username": "root",
@@ -21,5 +21,4 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-
 }
